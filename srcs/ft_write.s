@@ -1,15 +1,15 @@
 			section .text
-			global	_ft_write
-			extern ___error
-_ft_write:
-			mov rax, 0x2000004
+			global ft_write
+			extern __errno_location
+ft_write:
+			mov rax, 1
 			syscall
-			jc error
+			jc errno
 			ret
 
-error:
+errno:
 			push rax
-			call ___error
+			call __errno_location
 			mov rdi, rax
 			pop rax
 			mov [rdi], rax

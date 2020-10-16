@@ -1,17 +1,18 @@
 			section .text
-			global	_ft_read
-			extern ___error
-_ft_read:
-			mov rax, 0x2000003 ; copie la fonction système read dans le registre rax
-			syscall ; appelle la fonction systéme read
-			jc error ;
-			ret
+			global	ft_read
+			extern __errno_location
 
-error:
-			push rax
-			call ___error
-			mov rdi, rax
-			pop rax
-			mov [rdi], rax
-			mov rax, -1
-			ret
+ft_read:
+    mov     rax, 0
+    syscall
+    jc      errno
+    ret
+
+errno:
+    push    rbx
+    mov     rbx, rax
+    call    __errno_location
+    mov     [rax], rbx
+    pop     rbx
+    mov     rax, -1
+    ret

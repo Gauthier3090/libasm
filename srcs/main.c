@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpladet <gpladet.student.s19.be>           +#+  +:+       +#+        */
+/*   By: gpladet <gpladet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 23:10:56 by gpladet           #+#    #+#             */
-/*   Updated: 2020/10/08 16:58:21 by gpladet          ###   ########.fr       */
+/*   Updated: 2020/10/16 15:50:31 by gpladet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	main(void)
 {
 	char	tmp[42];
 	char	*str;
-	int		errno;
 
 	printf("===========================\n");
 	printf("         FT_STRLEN         \n");

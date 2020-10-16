@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gpladet <gpladet.student.s19.be>           +#+  +:+       +#+         #
+#    By: gpladet <gpladet@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/26 22:23:39 by gpladet           #+#    #+#              #
-#    Updated: 2020/10/08 16:54:17 by gpladet          ###   ########.fr        #
+#    Updated: 2020/10/16 15:57:27 by gpladet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libasm.a
 COMP = nasm
-COMP_FLAG = -f macho64
+COMP_FLAG = -f elf64
 
 SRCS_PATH = ./srcs/
 OBJS_PATH = ./objs/
@@ -30,6 +30,7 @@ ${OBJS_PATH}%.o : ${SRCS_PATH}%.s
 
 clean :
 	@rm -rf ${OBJS_PATH}
+	@rm -rf a.out
 
 fclean : clean
 	@rm -rf ${NAME}
