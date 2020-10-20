@@ -8,6 +8,7 @@ ft_write:
 			ret
 
 errno:
+			neg rax
 			push rax
 			call __errno_location
 			mov rdi, rax

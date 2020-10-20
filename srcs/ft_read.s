@@ -3,16 +3,17 @@
 			extern __errno_location
 
 ft_read:
-    mov     rax, 0
-    syscall
-    jc      errno
-    ret
+			mov rax, 0
+			syscall
+			jc errno
+			ret
 
 errno:
-    push    rbx
-    mov     rbx, rax
-    call    __errno_location
-    mov     [rax], rbx
-    pop     rbx
-    mov     rax, -1
-    ret
+			neg rax
+			push rax
+			call __errno_location
+			mov rdi, rax
+			pop rax
+			mov [rdi], rax
+			mov rax, -1
+			ret

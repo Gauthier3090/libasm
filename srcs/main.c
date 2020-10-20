@@ -6,7 +6,7 @@
 /*   By: gpladet <gpladet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 23:10:56 by gpladet           #+#    #+#             */
-/*   Updated: 2020/10/16 15:50:31 by gpladet          ###   ########.fr       */
+/*   Updated: 2020/10/20 17:45:42 by gpladet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ char	*ft_strdup(const char *str);
 
 int	main(void)
 {
+	char	buffer[100];
 	char	tmp[42];
 	char	*str;
 
@@ -92,54 +93,44 @@ int	main(void)
 	write(1, "Hello world\n", 13);
 	ft_write(1, "Hello world\n\n", 13);
 
-	errno = 0;
    	write(0xff, "hello!\n", 7);
-	printf("errno : %d\n", errno);
-	errno = 0;
+	printf("errno : %s %d\n", strerror(errno), errno);
 	ft_write(0xff, "hello!\n", 7);
-	printf("errno : %d\n\n", errno);
+	printf("errno : %s %d\n", strerror(errno), errno);
 
 	write(0, "Bonjour les amis\n", 18);
 	ft_write(0, "Bonjour les amis\n\n", 18);
 
-	errno = 0;
 	write(1, "hello!\n", -6);
-	printf("errno : %d\n", errno);
-	errno = 0;
+	printf("errno : %s %d\n", strerror(errno), errno);
 	ft_write(1, "hello!\n", -6);
-	printf("errno : %d\n\n", errno);
+	printf("errno : %s %d\n\n", strerror(errno), errno);
 
-	errno = 0;
 	write(0, NULL, 0);
-	printf("errno : %d\n", errno);
-	errno = 0;
+	printf("errno : %s %d\n", strerror(errno), errno);
 	ft_write(0, NULL, 0);
-	printf("errno : %d\n", errno);
+	printf("errno : %s %d\n\n", strerror(errno), errno);
 
 	printf("===========================\n");
 	printf("         FT_READ           \n");
 	printf("===========================\n\n");
 
-	char buffer[100];
-
 	read(0, buffer, 29);
 	ft_read(0, buffer, 29);
 
-	errno = 0;
    	read(0xff, buffer, 50);
-	printf("errno : %d\n", errno);
-	errno = 0;
+	printf("errno : %s %d\n", strerror(errno), errno);
 	ft_read(0xff, buffer, 50);
-	printf("errno : %d\n\n", errno);
+	printf("errno : %s %d\n\n", strerror(errno), errno);
 
 	printf("===========================\n");
 	printf("         FT_STRDUP          \n");
 	printf("===========================\n\n");
 
-	str = strdup("Hello");
+	str = strdup("Hello world");
 	printf("%s\n", str);
 	free(str);
-	str = ft_strdup("Hello");
+	str = ft_strdup("Hello world");
 	printf("%s\n\n", str);
 	free(str);
 

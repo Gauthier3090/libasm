@@ -6,7 +6,7 @@
 #    By: gpladet <gpladet@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/26 22:23:39 by gpladet           #+#    #+#              #
-#    Updated: 2020/10/16 15:57:27 by gpladet          ###   ########.fr        #
+#    Updated: 2020/10/20 16:48:01 by gpladet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,3 +37,4 @@ fclean : clean
 
 re : fclean all
 
+.PHONY : all clean fclean re
